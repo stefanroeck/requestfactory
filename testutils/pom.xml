@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 
 	<name>GWT RequestFactory TestUtils</name>
-	<url>cleancodematters.wordpress.com</url>
+	<url>https://github.com/stefanroeck/requestfactory</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
