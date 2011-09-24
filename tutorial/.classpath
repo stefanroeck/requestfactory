@@ -4,7 +4,6 @@
 	<classpathentry excluding="**" kind="src" output="target/tutorial-0.0.1-SNAPSHOT/WEB-INF/classes" path="src/main/resources"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -25,5 +24,10 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar"/>
 	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA.jar" sourcepath="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
 </classpath>
