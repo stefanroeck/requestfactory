@@ -10,11 +10,12 @@
   <artifactId>tutorial</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>GWT Maven Archetype</name>
+  <name>GWT Request Factory tutorial</name>
+  <url>https://github.com/stefanroeck/requestfactory</url>
 
   <properties>
     <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.3.0</gwtVersion>
+    <gwtVersion>2.4.0</gwtVersion>
     <!-- GWT needs at least java 1.5 -->
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,8 +71,10 @@
             <goals>
               <goal>compile</goal>
               <goal>test</goal>
+              <!-- 
               <goal>i18n</goal>
               <goal>generateAsync</goal>
+               -->
             </goals>
           </execution>
         </executions>
@@ -80,7 +83,9 @@
         <configuration>
           <runTarget>Tutorial.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
+          <!-- 
           <i18nMessagesBundle>cleancodematters.requestfactory.tutorial.client.Messages</i18nMessagesBundle>
+           -->
         </configuration>
       </plugin>
 
