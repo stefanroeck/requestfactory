@@ -1,6 +1,9 @@
 package cleancodematters.requestfactory.tutorial.client;
 
+import cleancodematters.requestfactory.tutorial.client.PizzaRequestFactory.PizzaRequestContext;
+
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -10,16 +13,20 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.web.bindery.event.shared.SimpleEventBus;
+import com.google.web.bindery.requestfactory.shared.Receiver;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Tutorial implements EntryPoint {
+  
   /**
    * This is the entry point method.
    */
   public void onModuleLoad() {
-    final Button sendButton = new Button( "Push" );
+    
+    final Button sendButton = new Button( "Order pizza" );
     final TextBox nameField = new TextBox();
     final Label errorLabel = new Label();
 
@@ -38,7 +45,7 @@ public class Tutorial implements EntryPoint {
 
     // Create the popup dialog box
     final DialogBox dialogBox = new DialogBox();
-    dialogBox.setText("Remote Procedure Call");
+    dialogBox.setText("Request Factory Call");
     dialogBox.setAnimationEnabled(true);
     final Button closeButton = new Button("Close");
     // We can set the id of a widget by accessing its Element
@@ -70,14 +77,27 @@ public class Tutorial implements EntryPoint {
        * Fired when the user clicks on the sendButton.
        */
       public void onClick(ClickEvent event) {
-        sendNameToServer();
+        orderPizza();
       }
 
       /**
        * Send the name from the nameField to the server and wait for a response.
        */
-      private void sendNameToServer() {
-        // First, we validate the input.
+      private void orderPizza() {
+        PizzaRequestContext context = createFactory().context();
+        PizzaProxy pizza = context.create( PizzaProxy.class );
+        pizza.setName( nameField.getText() );
+        
+        context.save( pizza ).fire( new Receiver<Void>() {
+
+          @Override
+          public void onSuccess( Void arg0 ) {
+            dialogBox.show();
+            sendButton.setEnabled(true);
+          }
+          
+        });
+        
         errorLabel.setText("");
         String textToServer = nameField.getText();
 
@@ -93,4 +113,11 @@ public class Tutorial implements EntryPoint {
     MyHandler handler = new MyHandler();
     sendButton.addClickHandler(handler);
   }
+
+  private static PizzaRequestFactory createFactory() {
+    PizzaRequestFactory factory = GWT.create( PizzaRequestFactory.class );
+    factory.initialize( new SimpleEventBus() );
+    return factory;
+  }
+  
 }
