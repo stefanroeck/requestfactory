@@ -12,6 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gwtVersion>2.4.0</gwtVersion>
 	</properties>
 
 	<dependencies>
@@ -30,13 +31,8 @@
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
-			<version>2.3.0</version>
+			<version>${gwtVersion}</version>
 		</dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-servlet</artifactId>
-      <version>2.3.0</version>
-    </dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -51,18 +47,16 @@
 		<!-- Hibernate validator and logging framework are not used. However, if 
 			not present, the static intialization of the validator fails in ReflectiveServiceLayer 
 			and raises an log entry -->
-    <!--  
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>4.1.0.Final</version>
+      <version>4.2.0.Final</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>0.9.29</version>
+      <version>0.9.30</version>
     </dependency>
-    -->
-
 	</dependencies>
+	
 </project>
