@@ -1,0 +1,1 @@
+Helper project to write plain JRE JUnit tests for GWT RequestFactory based classes. Uses Mockito to mock the back-end service layer. 

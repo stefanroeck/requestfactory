@@ -1,0 +1,1 @@
+Small GWT RequestFactory project that demos the usage of the new 2.4 support of polymorphic proxies.
