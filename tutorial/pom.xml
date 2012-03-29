@@ -4,6 +4,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+  <!-- edited somethings to work in GWT 2.4.*, see http://stackoverflow.com/questions/9926387/gwt-requestfactory-with-maven  -->
+
   <!-- POM file generated with GWT webAppCreator -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>cleancodematters.requestfactory</groupId>
