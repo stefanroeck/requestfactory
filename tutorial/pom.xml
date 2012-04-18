@@ -68,37 +68,6 @@
 
     <plugins>
 
-<!-- requestfactory-apt runs an annotation processor (APT) to
-           instrument its service interfaces so that
-           RequestFactoryServer can decode client requests. Normally
-           you would just have a dependency on requestfactory-apt
-           with <scope>provided</scope>, but that won't work in
-           eclipse due to m2e bug
-           https://bugs.eclipse.org/bugs/show_bug.cgi?id=335036 -->
-<!-- 
-      <plugin>
-        <groupId>org.bsc.maven</groupId>
-        <artifactId>maven-processor-plugin</artifactId>
-        <version>2.0.5</version>
-        <executions>
-          <execution>
-            <id>process</id>
-            <goals>
-              <goal>process</goal>
-            </goals>
-            <phase>generate-sources</phase>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.google.web.bindery</groupId>
-            <artifactId>requestfactory-apt</artifactId>
-            <version>${gwtVersion}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
- -->
-
       <!-- Google Plugin for Eclipse (GPE) won't see the source
            generated above by requestfactory-apt unless it is exposed
            as an additional source dir-->
@@ -175,37 +144,6 @@
         </configuration>
       </plugin>
     </plugins>
-
-<!-- 
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.bsc.maven</groupId>
-										<artifactId>maven-processor-plugin</artifactId>
-										<versionRange>[2.0.5,)</versionRange>
-										<goals>
-											<goal>process</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
- -->
   </build>
 
 </project>
