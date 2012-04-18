@@ -24,6 +24,7 @@ import cleancodematters.requestfactory.testutils.RequestFactoryHelper;
 
 import com.google.web.bindery.requestfactory.shared.Receiver;
 
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class VehicleRequestFactoryTest {
 
   private VehicleProvider service;
@@ -35,7 +36,6 @@ public class VehicleRequestFactoryTest {
     factory = RequestFactoryHelper.create( VehicleRequestFactory.class );
   }
   
-  @SuppressWarnings({ "rawtypes", "unchecked" })
   @Test
   public void testPolymorphism() {
     Vehicle vehicle = new Vehicle();
