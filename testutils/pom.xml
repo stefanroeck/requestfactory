@@ -12,14 +12,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<gwtVersion>2.4.0</gwtVersion>
+		<gwtVersion>2.5.0</gwtVersion>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -52,11 +52,11 @@
 
 		<!-- Hibernate validator and logging framework are not used. However, if 
 			not present, the static intialization of the validator fails in ReflectiveServiceLayer 
-			and raises an log entry -->
+			and raises an exception-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>4.2.0.Final</version>
+      <version>4.3.0.Final</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>

@@ -4,8 +4,6 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <!-- edited somethings to work in GWT 2.4.*, see http://stackoverflow.com/questions/9926387/gwt-requestfactory-with-maven  -->
-
   <!-- POM file generated with GWT webAppCreator -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>cleancodematters.requestfactory</groupId>
@@ -16,9 +14,7 @@
   <url>https://github.com/stefanroeck/requestfactory</url>
 
   <properties>
-    <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.4.0</gwtVersion>
-    <!-- GWT needs at least java 1.5 -->
+    <gwtVersion>2.5.0</gwtVersion>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -29,14 +25,6 @@
 			<artifactId>requestfactory-server</artifactId>
 			<version>${gwtVersion}</version>
 		</dependency>
-		<!-- 
-       <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-servlet</artifactId>
-      <version>${gwtVersion}</version>
-      <scope>runtime</scope>
-    </dependency>
-		 --> 
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
@@ -49,17 +37,27 @@
       <version>${gwtVersion}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.7</version>
-      <scope>test</scope>
-    </dependency>
+    
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>1.0.0.GA</version>
     </dependency>
+    
+    <!-- Hibernate validator and logging framework are not used. However, if 
+      not present, the static intialization of the validator fails in ReflectiveServiceLayer 
+      and raises an exception-->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.3.0.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>0.9.30</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
@@ -96,7 +94,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>2.4.0</version>
+        <version>${gwtVersion}</version>
         <executions>
           <execution>
             <goals>

@@ -12,18 +12,6 @@
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/gwt-user.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/doc/javadoc/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/gwt-dev.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/doc/javadoc/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar"/>
-	<classpathentry kind="lib" path="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA.jar" sourcepath="F:/sts-2.6.1.RELEASE/plugins/com.google.gwt.eclipse.sdkbundle_2.4.0.r36v201109211906/gwt-2.4.0/validation-api-1.0.0.GA-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
