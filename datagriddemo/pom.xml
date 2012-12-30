@@ -10,12 +10,10 @@
   <artifactId>datagriddemo</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>GWT Maven Archetype</name>
+  <name>GWT RequestFactory Datagrid example</name>
 
   <properties>
-    <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.4.0</gwtVersion>
-    <!-- GWT needs at least java 1.5 -->
+    <gwtVersion>2.5.0</gwtVersion>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -57,7 +55,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>4.2.0.Final</version>
+      <version>4.3.0.Final</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -68,7 +66,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.7</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -89,7 +87,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>2.4.0</version>
+        <version>${gwtVersion}</version>
         <executions>
           <execution>
             <goals>
