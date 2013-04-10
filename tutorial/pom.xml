@@ -15,7 +15,7 @@
 
   <properties>
     <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
-    <gwt.version>2.5.0</gwt.version>
+    <gwt.version>2.5.1</gwt.version>
     <java.version>1.6</java.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
     <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
