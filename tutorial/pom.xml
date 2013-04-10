@@ -43,6 +43,7 @@
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>1.0.0.GA</version>
+      <classifier>sources</classifier>
     </dependency>
     
     <!-- Hibernate validator and logging framework are not used. However, if 
