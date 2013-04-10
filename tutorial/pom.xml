@@ -14,7 +14,6 @@
   <url>https://github.com/stefanroeck/requestfactory</url>
 
   <properties>
-    <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
     <gwt.version>2.5.1</gwt.version>
     <java.version>1.6</java.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
@@ -72,30 +71,6 @@
     <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 
     <plugins>
-
-      <!-- Google Plugin for Eclipse (GPE) won't see the source
-           generated above by requestfactory-apt unless it is exposed
-           as an additional source dir-->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>${build-helper-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>${project.build.directory}/generated-sources/apt</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
 
       <!-- GWT Maven Plugin -->
       <plugin>
