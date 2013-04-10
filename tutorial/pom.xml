@@ -113,7 +113,6 @@
           gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
           <runTarget>Tutorial.html</runTarget>
-          <hostedWebapp>${webappDirectory}</hostedWebapp>
         </configuration>
       </plugin>
 
