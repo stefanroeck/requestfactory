@@ -15,6 +15,7 @@
 
   <properties>
     <gwtVersion>2.5.0</gwtVersion>
+    <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -142,6 +143,53 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <!-- Manage Eclipse's lifecycle -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>${lifecycle-mapping.version}</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <versionRange>${gwtVersion}</versionRange>
+                    <goals>
+                      <goal>resources</goal>
+                      <goal>i18n</goal>
+                      <goal>generateAsync</goal>
+                      <goal>css</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <versionRange>2.2</versionRange>
+                    <goals>
+                      <goal>exploded</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
   </build>
 
 </project>
