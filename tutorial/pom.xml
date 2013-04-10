@@ -14,8 +14,13 @@
   <url>https://github.com/stefanroeck/requestfactory</url>
 
   <properties>
-    <gwtVersion>2.5.0</gwtVersion>
+    <build-helper-maven-plugin.version>1.7</build-helper-maven-plugin.version>
+    <gwt.version>2.5.0</gwt.version>
+    <java.version>1.6</java.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
+    <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+    <maven-war-plugin.version>2.3</maven-war-plugin.version>
+
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -24,18 +29,18 @@
 		<dependency>
 			<groupId>com.google.web.bindery</groupId>
 			<artifactId>requestfactory-server</artifactId>
-			<version>${gwtVersion}</version>
+			<version>${gwt.version}</version>
 		</dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
-      <version>${gwtVersion}</version>
+      <version>${gwt.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.google.web.bindery</groupId>
       <artifactId>requestfactory-apt</artifactId>
-      <version>${gwtVersion}</version>
+      <version>${gwt.version}</version>
       <scope>provided</scope>
     </dependency>
     
@@ -74,7 +79,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.7</version>
+        <version>${build-helper-maven-plugin.version}</version>
         <executions>
           <execution>
             <id>add-source</id>
@@ -96,7 +101,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>${gwtVersion}</version>
+        <version>${gwt.version}</version>
         <executions>
           <execution>
             <goals>
@@ -120,7 +125,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.2</version>
+        <version>${maven-war-plugin.version}</version>
         <executions>
           <execution>
             <phase>compile</phase>
@@ -136,10 +141,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
         </configuration>
       </plugin>
     </plugins>
@@ -158,7 +163,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                    <versionRange>${gwtVersion}</versionRange>
+                    <versionRange>${gwt.version}</versionRange>
                     <goals>
                       <goal>resources</goal>
                       <goal>i18n</goal>
@@ -174,7 +179,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <versionRange>2.2</versionRange>
+                    <versionRange>${maven-war-plugin.version}</versionRange>
                     <goals>
                       <goal>exploded</goal>
                     </goals>
