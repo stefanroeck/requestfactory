@@ -36,12 +36,6 @@
       <version>${gwt.version}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.web.bindery</groupId>
-      <artifactId>requestfactory-apt</artifactId>
-      <version>${gwt.version}</version>
-      <scope>provided</scope>
-    </dependency>
     
     <dependency>
       <groupId>javax.validation</groupId>
@@ -121,6 +115,13 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.web.bindery</groupId>
+            <artifactId>requestfactory-apt</artifactId>
+            <version>${gwt.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
 
